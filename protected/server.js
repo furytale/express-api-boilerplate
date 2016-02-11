@@ -14,10 +14,6 @@ import path from 'path';
 import URL from 'url';
 import express from 'express';
 import bodyParser from 'body-parser';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import WebpackDevServer from 'webpack-dev-server';
-import debug from 'debug';
 import colors from 'colors';
 import webpack from 'webpack';
 import cookieParser from 'cookie-parser';
@@ -25,11 +21,9 @@ import errorHandler from './core/errorHandler';
 import axios from 'axios';
 import apiEndpoints from './routes/apiEndpoints';
 
-const WEBPACK_PORT  = 3001;
 const DEFAULT_PORT  = 3000;
 const app           = express();
 const jsonParser    = bodyParser.json();
-const statsJsonPath = path.join(__dirname, '../build', '_stats.json');
 
 
 let allowCrossDomain = (req, res, next) => {
